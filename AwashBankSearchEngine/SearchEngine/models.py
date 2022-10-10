@@ -6,7 +6,7 @@ from django.db import models
 class FileAndDocumentBase(models.Model):
     fileCategory=models.CharField(max_length=100)
     fileContent=models.FileField()
-    publicaitonDate=models.DateTimeField("PublicationDate")
+    publicaitonDate=models.DateTimeField("Publication Date")
     publishedBy=models.CharField(max_length=100)
 
     def _str_(self):
@@ -14,12 +14,11 @@ class FileAndDocumentBase(models.Model):
 
 # a model for creating the categories under which files and documents are indexed
 class Category(models.Model):
-    categoryTitle=models.CharField(max_length=100)
+    categoryTitle=models.ForeignKey(FileAndDocumentBase, on_delete = models.CASCADE, related_name = 'categories')
     publicationDate=models.DateTimeField()
 
     def _str_(self):
         return self.categoryTitle
-    
 
 
 
