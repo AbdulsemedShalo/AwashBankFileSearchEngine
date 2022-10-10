@@ -1,2 +1,3 @@
 # AwashBankFileSearchEngine
-a file and document search engine developed by Awash Bank
+A file and document Search Engine developed by Awash Bank 
+And also have discussion forum board
